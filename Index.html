@@ -7,10 +7,69 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header> <h1>Christmas is coming!</h1></header>
+    <header>
+      <div class="Brand">
+          <img src="IMG/gifts.png" alt="logo"></a></div>
+      <nav>
+          <h1>Cristmas is coming!</h1></nav>  
+      <div class="tools">
+        <p id="demo"></p>
+
+        <script>
+        // Set the date we're counting down to
+        var countDownDate = new Date("Dec 24, 2020 00:00:01").getTime();
+        var x = setInterval(function() {
+          var now = new Date().getTime();
+          var distance = countDownDate - now;  
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "Let's wait for Christmas 2021";
+          }
+        }, 1000);
+        </script>
+      </div>
+    </header>
+    <div class="hero">
+        <div class="feature">
+            <p>Christmas is celebrated on December 25 and is both a sacred religious holiday and a worldwide cultural and commercial phenomenon.</p>
+        </div>
+        <div class='action'>
+            <p>In the early years of Christianity, Easter was the main holiday; the birth of Jesus was not celebrated. In the fourth century, church officials decided to institute the birth of Jesus as a holiday.</p>
+        </div>
+    </div>
+
+    <div class="desktop-ad"><img src="IMG/snowman.png" alt="Ad"></div>
+
     <main>
-        
+        <article class="feature">
+            <h4>What is Christmas?</h4>
+            <p>Christmas is celebrated on December 25 and is both a sacred religious holiday and a worldwide cultural and commercial phenomenon.</p></article>
+        <div class="mobile-ad"><img src="IMG/snowman.png" alt="Ad"></div>
+        <article class="listing">
+            <h2>How Did Christmas Start?</h2>
+            <p>The middle of winter has long been a time of celebration around the world. Centuries before the arrival of the man called Jesus, early Europeans celebrated light and birth in the darkest days of winter. Many peoples rejoiced during the winter solstice, when the worst of the winter was behind them and they could look forward to longer days and extended hours of sunlight.</p>
+            <p>In Scandinavia, the Norse celebrated Yule from December 21, the winter solstice, through January. In recognition of the return of the sun, fathers and sons would bring home large logs, which they would set on fire. The people would feast until the log burned out, which could take as many as 12 days. The Norse believed that each spark from the fire represented a new pig or calf that would be born during the coming year.</p>
+        </article>
     </main>
-    
+    <div class="sidebar">
+        <div class="feature">
+            <h4>The First Snowflake Fell Today</h4>
+            <p>The first snowflake fell today
+                And with any luck, more will follow.
+                Billions and trillions of snowflakes would mean
+                They’d have to cancel school tomorrow.</p>
+        </div>
+    </div>
+    <footer>
+        <h2>Let's hope it will snow!</h2>
+        <h3>Riga, 2020</h3>
+    </footer>
+
 </body>
 </html>
