@@ -40,14 +40,12 @@ header .brand {
 
 header nav {
     grid-column: 2/1
-    place-self: center;
 }
 
 header .tools {
     grid-column: 2/2
     grid-area: tools;
     font-size: xx-large;
-    place-self: center;
 }
 
 /* Hero section */
