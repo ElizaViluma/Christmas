@@ -44,7 +44,6 @@ header nav {
 
 header .tools {
     grid-column: 2/2
-    grid-area: tools;
     font-size: xx-large;
 }
 
