@@ -1,17 +1,18 @@
 img {
-    max-width: 200px;
+    max-width: 300px;
     height: auto;
   }
+
 body {
     background: darkgreen;
     padding: 10px;
     font-size: 1.5em;
     text-align: center;
     color: whitesmoke;
-    height: 150vh;
+    height: 100vh;
 
     display: grid;
-    grid-gap: 10px;
+    grid-gap: 20px;
     
     grid-template-areas:
         "header"
@@ -30,21 +31,24 @@ header {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    grid-template-areas:
+    "brand brand"
+    "nav tools";
 }
 
 header .brand {
-    justify-self: center;
-    padding: 10px;
-    grid-column: 1
+    grid-area: brand;
 }
 
 header nav {
-    grid-column: 2/1
+    grid-area: nav;
+    justify-content: center;
 }
 
 header .tools {
-    grid-column: 2/2
-    
+    grid-area: tools;
+    font-size: xx-large;
+    justify-content: center;
 }
 
 /* Hero section */
@@ -79,6 +83,10 @@ main {
 
 main .feature {
     grid-area: feature;
+}
+
+a:hover {
+    background: red;
 }
 
 main .mobile-ad {
@@ -134,9 +142,9 @@ footer {
 
     /* Change Header Layout */
     header {
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 2fr 1fr;
         grid-template-areas:
-            "brand brand nav tools";
+            "brand nav tools";
     }
 
     /* Change Hero Layout */
@@ -159,10 +167,10 @@ footer {
             "listing listing";
     }
 
-    /* Change Sidebar Layout */
     .sidebar {
         display: grid;
     }
+
 
     .mobile-ad img {
         width: 200px;
@@ -177,13 +185,11 @@ footer {
         grid-template-areas:"header header""hero ad""body sidebar" "footer footer"
     }
 
-    /* Change Hero Layout */
     .hero {
         grid-template-columns: 2fr 1fr;
         grid-template-areas:"feature action"
     }
 
-    /* Change Body Layout */
     main {
         grid-template-columns: 1fr 2fr;
         grid-template-rows: 1fr;
@@ -194,6 +200,9 @@ footer {
         display: none;
     }
 
+    a:hover {
+        background: red;
+    }
     .desktop-ad {
         display: block;
     }
