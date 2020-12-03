@@ -1,0 +1,211 @@
+img {
+    max-width: 300px;
+    height: auto;
+  }
+
+body {
+    background: darkgreen;
+    padding: 10px;
+    font-size: 1.5em;
+    text-align: center;
+    color: whitesmoke;
+    height: 100vh;
+
+    display: grid;
+    grid-gap: 20px;
+    
+    grid-template-areas:
+        "header"
+        "hero"
+        "body"
+        "footer"
+}
+
+/* Header section */
+header {
+    padding: 10px;
+    grid-area: header;
+    background: darkred;
+    box-shadow: 5px 5px 5px whitesmoke;
+    
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    grid-template-areas:
+    "brand brand"
+    "nav tools";
+}
+
+header .brand {
+    grid-area: brand;
+}
+
+header nav {
+    grid-area: nav;
+    justify-content: center;
+}
+
+header .tools {
+    grid-area: tools;
+    font-size: xx-large;
+    justify-content: center;
+}
+
+/* Hero section */
+.hero {
+    padding: 10px;
+    grid-area: hero;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    grid-template-areas:"action";
+}
+
+.hero .action {
+    grid-area: action;
+}
+
+.hero .feature {
+    grid-area: feature;
+}
+
+/* Body section */
+main {
+    padding: 10px;
+    grid-area: body;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+    grid-template-areas:"feature""ad""listing";
+}
+
+main .feature {
+    grid-area: feature;
+}
+
+a:hover {
+    background: red;
+}
+
+main .mobile-ad {
+    justify-self: center;
+    grid-area: ad;
+}
+
+main .listing {
+    grid-area: listing;
+}
+
+/* Footer section */
+footer {
+    background: darkred;
+    padding: 10px;
+    grid-area: footer;
+}
+
+/* Hide Sections which are not part of mobile */
+.desktop-ad {
+    grid-area: ad;
+    display: none;
+}
+
+.hero .feature {
+    display: none;
+}
+
+/* Sidebar section */
+.sidebar {
+    padding: 10px;
+    grid-area: sidebar;
+
+    display: none;
+}
+
+.sidebar .feature {
+    height: 100%;
+}
+
+/* Tablet Media */
+@media (min-width: 576px) {
+    body {
+        grid-template-rows: auto auto 1fr auto auto;
+        grid-template-areas:
+            "header"
+            "hero"
+            "body"
+            "sidebar"
+            "footer";
+        justify-self: center;
+    }
+
+    /* Change Header Layout */
+    header {
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-areas:
+            "brand nav tools";
+    }
+
+    /* Change Hero Layout */
+    .hero {
+        grid-template-areas:
+            "feature"
+            "action";
+    }
+
+    .hero .feature {
+        display: block;
+    }
+
+    /* Change Body Layout */
+    main {
+        grid-template-columns: 1fr 200px;
+        grid-template-rows: auto 1fr;
+        grid-template-areas:
+            "feature ad"
+            "listing listing";
+    }
+
+    .sidebar {
+        display: grid;
+    }
+
+
+    .mobile-ad img {
+        width: 200px;
+    }
+}
+
+/* Desktop Media */
+@media (min-width: 992px) {
+    body {
+        grid-template-columns: 1fr 350px;
+        grid-template-rows: auto auto 1fr auto;
+        grid-template-areas:"header header""hero ad""body sidebar" "footer footer"
+    }
+
+    .hero {
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas:"feature action"
+    }
+
+    main {
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: 1fr;
+        grid-template-areas:"feature listing"
+    }
+
+    .mobile-ad {
+        display: none;
+    }
+
+    a:hover {
+        background: red;
+    }
+    .desktop-ad {
+        display: block;
+    }
+}
+
+
